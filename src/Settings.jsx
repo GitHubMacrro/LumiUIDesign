@@ -28,7 +28,7 @@ const modelFixtures = [
 ];
 const assigned = ['lumi'];
 let settingsStore = {
-  appearance:{theme:'dark',styleTheme:'lumi',motion:true,backgroundMotion:true,fontSize:14,background:'theme',weather:'clear',wallpaper:''},
+  appearance:{theme:'dark',styleTheme:'ember',motion:true,backgroundMotion:true,fontSize:14,background:'theme',weather:'clear',wallpaper:''},
   general:{name:'Jason',project:'Lumi Assistant',start:'主页',lang:'简体中文',replyLang:'跟随输入',toolPill:true},
   notifications:{done:true,digest:true,sound:false,quiet:'22:00 – 08:00'},
   models:modelFixtures,providers:providerFixtures,
