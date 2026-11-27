@@ -1,0 +1,50 @@
+/* The action dock belongs to the whole composer, not to its first text row. */
+.ref54-app .c54-composer { position:relative; }
+.ref54-app .c54-input-line { padding-inline-end:116px; }
+.ref54-app .c54-wrap.is-home .c54-input-line { padding-inline-end:78px; }
+.ref54-app .c54-composer.is-expanded .c54-input-line { padding-inline-end:0; }
+.ref54-app .c54-input-line > .ant-input { flex:1; min-width:0; }
+.ref54-app .c54-end { position:absolute; inset-inline-end:10px; bottom:10px; gap:4px; padding:0; }
+.ref54-app .c54-end > .ant-btn[aria-label="语音输入"] { display:inline-flex; }
+.ref54-app .c54-end > .ant-btn { width:34px; height:34px; flex:none; }
+.ref54-app .c54-tools { display:flex; flex-direction:column; align-items:stretch; gap:6px; padding:8px 2px 0; margin-top:2px; border-top:0; }
+.ref54-app .c54-selects { display:flex; flex-wrap:wrap; gap:4px 6px; min-width:0; }
+.ref54-app .c54-tools .c54-mode { width:110px; flex:0 0 110px; }
+.ref54-app .c54-tools .c54-agent { width:156px; flex:0 1 156px; }
+.ref54-app .c54-tools .c54-model { width:210px; max-width:100%; flex:0 1 210px; grid-column:auto; }
+.ref54-app .c54-native-model { flex:0 1 auto; max-width:100%; }
+.ref54-app .c54-actions { padding-inline-end:116px; min-height:36px; gap:4px; }
+.ref54-app .c54-context { margin-inline-start:0; }
+.ref54-app .c54-foot.is-chat { justify-content:flex-end; }
+.ref54-app .c54-tools .ant-btn, .ref54-app .c54-end .ant-btn-text, .ref54-app .c54-add { border-radius:10px; }
+.ref54-app .c54-tools .ant-select:not(.ant-select-disabled) { border-radius:9px; }
+.ref54-app .c54-tools .ant-select-focused { background:var(--accent-soft); }
+.ref54-app .c54-tools .ant-select:focus-within, .ref54-app .c54-end .ant-btn:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.c54-model-option { min-width:0; padding-block:3px; white-space:normal; overflow-wrap:anywhere; }
+.c54-model-option strong { display:block; font-weight:550; }
+.c54-model-option small { display:block; font-size:11px; line-height:1.5; color:var(--muted); }
+.c54-budget-caption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:4px 12px; margin-top:18px; font-size:12px; color:var(--muted); }
+.c54-budget-caption strong { color:var(--text); font-weight:550; font-variant-numeric:tabular-nums; }
+.c54-pop-content > .c54-budget-evidence { margin:10px 0 0; font-size:11px; line-height:1.6; }
+.c54-pop-content .ant-slider-mark-text { white-space:nowrap; }
+.c54-pop-content .ant-slider-mark-text:first-child { transform:translateX(0)!important; }
+.c54-pop-content .ant-slider-mark-text:last-child { transform:translateX(-100%)!important; }
+@media (hover:hover) {
+ .ref54-app .c54-tools .ant-select:not(.ant-select-disabled):hover,
+ .ref54-app .c54-tools .ant-btn:not(:disabled):hover,
+ .ref54-app .c54-end .ant-btn-text:not(:disabled):hover,
+ .ref54-app .c54-add:not(:disabled):hover { background:var(--nav-track); }
+}
+@container composer (max-width:440px) {
+ .ref54-app .c54-composer { padding:8px; }
+ .ref54-app .c54-end { bottom:10px; inset-inline-end:9px; gap:2px; }
+ .ref54-app .c54-end > .ant-btn { width:32px; height:32px; }
+ .ref54-app .c54-input-line { padding-inline-end:106px; }
+ .ref54-app .c54-wrap.is-home .c54-input-line { padding-inline-end:72px; }
+ .ref54-app .c54-composer.is-expanded .c54-input-line { padding-inline-end:0; }
+ .ref54-app .c54-input-line > .c54-add { width:30px; height:34px; }
+ .ref54-app .c54-selects { gap:4px; }
+ .ref54-app .c54-tools .c54-agent { width:148px; flex-basis:148px; }
+ .ref54-app .c54-tools .c54-model { width:210px; flex-basis:210px; max-width:100%; }
+ .ref54-app .c54-actions { padding-inline-end:106px; min-height:36px; }
+}

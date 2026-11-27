@@ -1,0 +1,202 @@
+/* Component roles use the palette resolved for the current appearance/background. */
+.ref54-app .h54-home {
+  --h54-ink: var(--text);
+  --h54-muted: var(--muted);
+  --h54-surface: var(--surface-panel);
+  --h54-line: var(--line);
+  --h54-warm: var(--brand-warm, var(--accent));
+  --h54-soft: var(--nav-track);
+  --h54-hover: var(--surface-floating);
+}
+.ref54-app .h54-card.ant-card { box-shadow: var(--panel-shadow); }
+.ref54-app .h54-card.ant-card:focus-within {
+  box-shadow: var(--panel-shadow-hover, var(--panel-shadow));
+}
+.ref54-app .h54-progress-steps > div > .anticon { color: var(--status-success-text); }
+.ref54-app .h54-work-link.tone-waiting .h54-work-indicator,
+.ref54-app .h54-work-link.tone-warning .h54-work-indicator { color: var(--status-warning-text); }
+.ref54-app .h54-work-link.tone-success .h54-work-indicator { color: var(--status-success-text); }
+
+:root[data-theme] .ref54-app .l54-header .ant-segmented-item-selected {
+  color: var(--accent-ink);
+}
+.ref54-app .c54-end > .ant-btn-primary:not(:disabled) {
+  background: var(--primary-fill);
+  color: var(--primary-ink);
+}
+.ref54-app .c54-end > .ant-btn-primary:disabled {
+  background: var(--nav-track);
+  color: var(--muted);
+}
+.ref54-app .l54-rail-dot { background: var(--status-warning-text); }
+.ref54-app .l54-account .ant-avatar,
+.s54-settings .s54-profile .ant-avatar {
+  background: var(--accent-soft) !important;
+  color: var(--accent) !important;
+}
+
+.ref54-app .c54-thread {
+  --c54-ink: var(--text);
+  --c54-muted: var(--muted);
+  --c54-surface: var(--bubble);
+  --c54-line: var(--line);
+}
+.ref54-app .c54-prose-list li::marker { color: var(--muted); }
+.ref54-app .c54-message.is-jump-target > .c54-message-surface {
+  box-shadow: 0 0 0 6px var(--accent-soft);
+}
+.ref54-app .c54-lumi-mark,
+.ref54-app .c54-run-symbol,
+.ref54-app .c54-empty-mark {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.ref54-app .c54-decision.ant-card {
+  --c54-muted: var(--muted);
+  background: var(--surface-soft);
+  border-color: var(--line);
+}
+.ref54-app .c54-decision.is-approval.ant-card {
+  background: var(--status-warning-surface);
+  border-color: var(--line);
+}
+.ref54-app .c54-decision .c54-decision-kind { color: var(--info-text); }
+.ref54-app .c54-decision.is-approval .c54-decision-kind,
+.ref54-app .c54-decision .c54-approval-note { color: var(--status-warning-text); }
+.ref54-app .c54-answer-options .ant-radio-wrapper {
+  background: var(--surface);
+  border-color: var(--control-border, var(--line));
+  color: var(--text);
+}
+.ref54-app .c54-answer-options .ant-radio-wrapper-checked {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.ref54-app .c54-copy-status,
+.ref54-app .c54-answer-error { color: var(--status-error-text); }
+.ref54-app .c54-decision-result > span { color: var(--status-success-text); }
+.ref54-app .c54-work-capsule.tone-active {
+  color: var(--info-text);
+  background: var(--info-surface);
+  border-color: transparent;
+}
+.ref54-app .c54-work-capsule.tone-waiting,
+.ref54-app .c54-work-capsule.tone-warning {
+  color: var(--status-warning-text);
+  background: var(--status-warning-surface);
+  border-color: transparent;
+}
+.ref54-app .c54-work-capsule.tone-success {
+  color: var(--status-success-text);
+  background: var(--status-success-surface);
+  border-color: transparent;
+}
+
+/* These status roles stay red/yellow/green regardless of wallpaper seed hue. */
+:root[data-theme] :is(.ant-tag-success, .ant-tag-green) {
+  color: var(--status-success-text) !important;
+  background: var(--status-success-surface) !important;
+}
+:root[data-theme] :is(.ant-tag-warning, .ant-tag-gold) {
+  color: var(--status-warning-text) !important;
+  background: var(--status-warning-surface) !important;
+}
+:root[data-theme] :is(.ant-tag-error, .ant-tag-red) {
+  color: var(--status-error-text) !important;
+  background: var(--status-error-surface) !important;
+}
+:root[data-theme] :is(.ant-tag-processing, .ant-tag-blue) {
+  color: var(--info-text) !important;
+  background: var(--info-surface) !important;
+}
+.ref54-app .ant-badge-status-success { background: var(--status-success-text); }
+.ref54-app .ant-badge-status-warning { background: var(--status-warning-text); }
+.ref54-app .ant-badge-status-error { background: var(--status-error-text); }
+.ref54-app .ant-badge-status-processing {
+  background: var(--info-text);
+  border-color: var(--info-text);
+}
+
+.s54-settings {
+  --s54-text: var(--text);
+  --s54-muted: var(--muted);
+  --s54-border: var(--line);
+  --s54-soft: var(--surface-soft);
+  --s54-panel: var(--surface);
+}
+:root[data-theme] .s54-settings {
+  --s54-text: var(--text);
+  --s54-muted: var(--muted);
+  --s54-border: var(--line);
+  --s54-soft: var(--surface-soft);
+  --s54-panel: var(--surface);
+}
+.s54-settings .s54-theme-tile.selected { border-color: var(--accent); }
+.s54-settings .s54-theme-tile .anticon,
+.s54-settings .s54-object-icon,
+.s54-settings .s54-picker-icon { color: var(--accent); }
+.s54-settings .ant-menu-item-selected {
+  background: var(--accent-soft) !important;
+  color: var(--accent) !important;
+}
+.s54-settings :is(button, input, textarea, [role=combobox], .ant-switch):focus-visible,
+.s54-settings .ant-input-affix-wrapper:focus-within,
+.s54-settings .ant-select:has(input:focus-visible) { outline-color: var(--accent); }
+
+:root[data-theme] .w54-attention,
+:root[data-theme] .w54-symbol.warning { background: var(--status-warning-surface); }
+:root[data-theme] .w54-attention strong,
+:root[data-theme] .w54-attention p,
+:root[data-theme] .w54-symbol.warning { color: var(--status-warning-text); }
+.w54-event-list li::marker,
+.w54-code .muted,
+.n54-report > .anticon { color: var(--muted); }
+.w54-code .added { color: var(--status-success-text); }
+.w54-code .removed { color: var(--status-error-text); }
+
+:root[data-theme] .ref54-app .p54-layout .p54-status-pill {
+  --status-ink: var(--secondary);
+  --status-bg: var(--nav-track);
+}
+:root[data-theme] .ref54-app .p54-layout .p54-status-pill.tone-active {
+  --status-ink: var(--info-text);
+  --status-bg: var(--info-surface);
+}
+:root[data-theme] .ref54-app .p54-layout .p54-status-pill.tone-waiting,
+:root[data-theme] .ref54-app .p54-layout .p54-status-pill.tone-warning {
+  --status-ink: var(--status-warning-text);
+  --status-bg: var(--status-warning-surface);
+}
+:root[data-theme] .ref54-app .p54-layout .p54-status-pill.tone-success {
+  --status-ink: var(--status-success-text);
+  --status-bg: var(--status-success-surface);
+}
+
+@media (hover: hover) {
+  .ref54-app .h54-card.ant-card:hover {
+    box-shadow: var(--panel-shadow-hover, var(--panel-shadow));
+  }
+  .s54-settings .s54-title-button:hover { color: var(--accent); }
+  .ref54-app .c54-answer-options .ant-radio-wrapper:not(.ant-radio-wrapper-disabled):hover {
+    border-color: var(--accent);
+  }
+}
+
+@media (forced-colors: active) {
+  :root[data-theme] :is(.ant-tag-success, .ant-tag-green, .ant-tag-warning, .ant-tag-gold,
+    .ant-tag-error, .ant-tag-red, .ant-tag-processing, .ant-tag-blue) {
+    color: CanvasText !important;
+    background: Canvas !important;
+    border: 1px solid CanvasText;
+  }
+  .ref54-app .c54-answer-options .ant-radio-wrapper,
+  .ref54-app .c54-decision.ant-card {
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+  }
+  .ref54-app .c54-answer-options .ant-radio-wrapper-checked { border-color: Highlight; }
+  .s54-settings :is(button, input, textarea, [role=combobox], .ant-switch):focus-visible,
+  .s54-settings .ant-input-affix-wrapper:focus-within,
+  .s54-settings .ant-select:has(input:focus-visible) { outline-color: Highlight; }
+}

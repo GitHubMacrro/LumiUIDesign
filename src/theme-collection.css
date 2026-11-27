@@ -1,0 +1,61 @@
+/* Named themes change the whole semantic palette; only their background layers travel. */
+.s54-preset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.s54-preset-tile{min-width:0;text-align:left;padding:6px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);transition:box-shadow 150ms, border-color 150ms}
+.s54-preset-tile[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.s54-preset-tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.s54-preset-preview{height:76px;border-radius:7px;background:linear-gradient(125deg,var(--preview-a),var(--preview-b));display:flex;flex-direction:column;gap:6px;padding:14px 16px;overflow:hidden;position:relative}
+.s54-preset-preview:before{content:"";position:absolute;top:10px;left:9px;bottom:10px;width:20%;border-radius:5px;background:var(--preview-panel);opacity:.7}
+.s54-preset-preview i{height:9px;width:49%;display:block;margin-left:29%;border-radius:5px;background:var(--preview-panel)}
+.s54-preset-preview i:nth-child(2){width:32%;margin-left:auto;background:var(--preview-user)}
+.s54-preset-preview i:last-child{height:16px;margin-top:auto;width:65%}
+.s54-preset-name{display:flex;align-items:center;justify-content:space-between;gap:5px;font-size:12px;font-weight:600;margin:9px 5px 3px}
+.s54-preset-name .anticon{color:var(--accent)}
+.s54-preset-tile small{display:block;font-size:11px;color:var(--muted);margin:0 5px 7px;line-height:1.6}
+.s54-preset-help{font-size:12px;color:var(--muted);line-height:1.8;margin:12px 0 0}
+.s54-other-themes.ant-collapse{margin-top:12px;border-top:1px solid var(--line);border-radius:0}
+.s54-other-themes.ant-collapse>.ant-collapse-item>.ant-collapse-header{padding:14px 0 4px;color:var(--muted);font-size:12px}
+.s54-other-themes.ant-collapse .ant-collapse-body-content,.s54-other-themes.ant-collapse .ant-collapse-content-box{padding:14px 0 0}
+.s54-family-modes .s54-theme-preview,.s54-family-modes .s54-theme-tile.auto .s54-theme-preview{background:var(--mode-light-canvas)}
+.s54-family-modes .s54-theme-preview i,.s54-family-modes .s54-theme-tile.auto .s54-theme-preview i{background:var(--mode-light-panel)}
+.s54-family-modes .s54-theme-preview i:first-child,.s54-family-modes .s54-theme-tile.auto .s54-theme-preview i:first-child{background:var(--mode-light-soft)}
+.s54-family-modes .s54-theme-tile.dark .s54-theme-preview,:root[data-theme=dark] .s54-family-modes .s54-theme-tile.auto .s54-theme-preview{background:var(--mode-dark-canvas)}
+.s54-family-modes .s54-theme-tile.dark .s54-theme-preview i,:root[data-theme=dark] .s54-family-modes .s54-theme-tile.auto .s54-theme-preview i{background:var(--mode-dark-panel)}
+.s54-family-modes .s54-theme-tile.dark .s54-theme-preview i:first-child,:root[data-theme=dark] .s54-family-modes .s54-theme-tile.auto .s54-theme-preview i:first-child{background:var(--mode-dark-soft)}
+.s54-family-modes .s54-theme-tile.system .s54-theme-preview{background:linear-gradient(110deg,var(--mode-light-canvas) 50%,var(--mode-dark-canvas) 50%)}
+.s54-family-modes .s54-theme-tile.system .s54-theme-preview i{background:linear-gradient(110deg,var(--mode-light-panel) 50%,var(--mode-dark-panel) 50%)}
+.s54-family-modes .s54-theme-tile.system .s54-theme-preview i:first-child{background:linear-gradient(110deg,var(--mode-light-soft) 50%,var(--mode-dark-soft) 50%)}
+.l54-theme-backdrop{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:var(--ambient)}
+.l54-theme-backdrop>i{position:absolute;inset:-18%;background:radial-gradient(ellipse at 24% 32%,var(--scene-a),transparent 68%);opacity:var(--scene-alpha-a,.68);transform:translate3d(-2%,-1%,0);animation:none}
+.l54-theme-backdrop>i+i{background:radial-gradient(ellipse at 78% 64%,var(--scene-b),transparent 65%);opacity:var(--scene-alpha-b,.7);transform:translate3d(1%,2%,0)}
+/* position:relative with z-index:auto preserves the existing portal/reply z-index relationship. */
+:root[data-style-theme]:not([data-style-theme=classic]):not([data-background=custom]) .l54-app.ref54-app{position:relative;background-image:none;background-color:transparent}
+:root[data-style-theme]:not([data-style-theme=classic]):not([data-theme-family=lumi]) .ref54-app .l54-mark{background:radial-gradient(circle at 30% 25%,var(--surface),var(--accent-soft) 45%,var(--accent));box-shadow:inset 0 1px 2px #ffffff50,0 2px 10px #0000000a}
+:root[data-style-theme]:not([data-style-theme=classic]):not([data-theme-family=lumi]) .ref54-app .l54-mark .anticon{color:var(--accent)}
+/* Lumi keeps a warm identity while the environment changes around neutral content. */
+:root[data-theme-family=lumi] .ref54-app .l54-mark{background:radial-gradient(circle at 33% 28%,#fff6db,#e6bb81 35%,#9c6c51 75%);box-shadow:0 0 14px #e4b97a35,inset 0 1px 2px #ffffff7a}
+:root[data-theme-family=lumi] .ref54-app .l54-mark .anticon{color:#332c26}
+:root[data-theme-family=lumi] .ref54-app .l54-brand{color:var(--canvas-ink)}
+:root[data-theme-family=lumi] .ref54-app .h54-home{--h54-ink:var(--canvas-ink);--h54-muted:var(--canvas-muted);--h54-warm:var(--canvas-warm);--h54-surface:var(--home-surface);--h54-soft:var(--home-soft)}
+:root[data-theme-family=lumi] .ref54-app .h54-card{--h54-ink:var(--text);--h54-muted:var(--muted);--h54-warm:var(--brand-warm)}
+:root[data-theme-family=lumi] .ref54-app .h54-live-work{--h54-ink:var(--canvas-ink);--h54-muted:var(--canvas-muted)}
+:root[data-theme-family=lumi] .ref54-app :is(.c54-foot,.c54-thread-date,.ref54-context-heading,.ref54-context-heading .ant-btn,.ref54-context-note,.ref54-context-clock){color:var(--canvas-muted)}
+:root[data-theme-family=lumi] .ref54-app .ref54-context-clock>strong{color:var(--canvas-ink)}
+.l54-theme-backdrop:after{content:"";position:absolute;inset:0;pointer-events:none}
+:root[data-weather=cloudy] .l54-theme-backdrop:after{background:linear-gradient(150deg,#9aa8c00c,#e5e8ed18)}
+:root[data-weather=rain] .l54-theme-backdrop:after{background:repeating-linear-gradient(105deg,transparent 0 58px,#6783a50b 59px 60px)}
+:root[data-weather=snow] .l54-theme-backdrop:after{background:radial-gradient(circle,#a4c1de21 0 1px,transparent 2px);background-size:50px 50px}
+:root[data-weather=fog] .l54-theme-backdrop:after{background:linear-gradient(170deg,#a4b0bb1c,transparent 45%,#a4b0bb15)}
+:root[data-theme-family=lumi][data-weather=cloudy] .l54-theme-backdrop:after{background:linear-gradient(150deg,#9aa8c008,#e5e8ed08)}
+:root[data-theme-family=lumi][data-weather=rain] .l54-theme-backdrop:after{background:repeating-linear-gradient(105deg,transparent 0 58px,#6783a508 59px 60px)}
+:root[data-theme-family=lumi][data-weather=snow] .l54-theme-backdrop:after{background:radial-gradient(circle,#a4c1de08 0 1px,transparent 2px);background-size:50px 50px}
+:root[data-theme-family=lumi][data-weather=fog] .l54-theme-backdrop:after{background:linear-gradient(170deg,#a4b0bb08,transparent 45%,#a4b0bb08)}
+@media(prefers-reduced-motion:no-preference){
+  :root[data-motion=full] .l54-theme-backdrop>i{animation:l54-ambient-drift-a 32s ease-in-out infinite;animation-play-state:paused}
+  :root[data-motion=full] .l54-theme-backdrop>i+i{animation-name:l54-ambient-drift-b;animation-duration:38s}
+  :root[data-motion=full] .l54-theme-backdrop[data-running=true]>i{animation-play-state:running}
+}
+@keyframes l54-ambient-drift-a{0%,100%{transform:translate3d(-2%,-1%,0) scale(1)}50%{transform:translate3d(7%,4%,0) scale(1.06)}}
+@keyframes l54-ambient-drift-b{0%,100%{transform:translate3d(1%,2%,0) scale(1.04)}50%{transform:translate3d(-6%,-4%,0) scale(.98)}}
+@media(hover:hover){.s54-preset-tile:hover{border-color:var(--accent);box-shadow:var(--panel-shadow)}}
+@media(max-width:700px){.s54-preset-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.s54-preset-preview{height:66px;padding:12px}.s54-preset-name{font-size:12px}.s54-preset-tile small{font-size:10px}}
+@media(forced-colors:active){.l54-theme-backdrop{display:none}.s54-preset-tile{border-color:ButtonText}.s54-preset-tile[aria-pressed=true]{border:2px solid Highlight;box-shadow:none}.s54-preset-preview{border:1px solid ButtonText}}

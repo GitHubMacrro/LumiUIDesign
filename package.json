@@ -1,0 +1,10 @@
+{
+  "name": "lumi-v54-design-prototype",
+  "version": "5.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Local UI exploration only; no Lumi application runtime or real integrations.",
+  "scripts": {"build": "node build.mjs"},
+  "dependencies": {"@ant-design/icons": "6.3.4", "antd": "6.7.2", "react": "19.3.1", "react-dom": "19.3.1"},
+  "devDependencies": {"esbuild": "0.28.2"}
+}

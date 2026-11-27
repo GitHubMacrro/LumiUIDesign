@@ -1,0 +1,116 @@
+/* An intrinsic grid row yields space below a message only while actions are open. */
+.ref54-app .c54-thread { overflow-anchor: none; }
+.ref54-app .c54-thread .c54-sr-only { top: 0; left: 0; }
+/* Reuse the existing inter-message gap before yielding any extra height. */
+.ref54-app .c54-message { margin-block-end: 24px; }
+.ref54-app .c54-message:has(+ .c54-message.is-continuation) { margin-block-end: 9px; }
+.ref54-app .c54-message.is-actions-open { margin-block-end: 4px; }
+.ref54-app .c54-message.is-actions-open:has(+ .c54-message.is-continuation) { margin-block-end: 6px; }
+.ref54-app .c54-message > .c54-actions-reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  width: max-content;
+  max-width: 100%;
+  align-self: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+}
+.ref54-app .c54-message.is-user > .c54-actions-reveal { align-self: flex-end; }
+.ref54-app .c54-message.is-actions-open > .c54-actions-reveal {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  pointer-events: auto;
+}
+.ref54-app .c54-actions-clip { min-height: 0; overflow: hidden; }
+.ref54-app .c54-message .c54-message-actions {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 3px;
+  width: max-content;
+  max-width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 3px 4px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  opacity: 1;
+  pointer-events: inherit;
+  transition: none;
+}
+.ref54-app .c54-message-actions .ant-btn {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  min-height: 24px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: var(--secondary);
+  background: transparent;
+  box-shadow: none;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+.ref54-app .c54-message-actions .ant-btn-icon,
+.ref54-app .c54-message-actions .ant-btn-icon .anticon { font-size: 14px; line-height: 1; }
+.ref54-app .c54-message-actions .ant-btn:focus-visible {
+  background: var(--nav-track);
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.ref54-app .c54-message-actions .ant-btn:disabled { color: var(--muted); opacity: .45; background: transparent; }
+.ref54-app .c54-message-actions .ant-btn.is-copied { color: var(--accent); }
+.ref54-app .c54-message-actions .ant-btn.c54-message-time {
+  width: auto;
+  min-width: 44px;
+  padding-inline: 5px;
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ref54-app .c54-message-actions .c54-message-version { padding-inline: 4px; color: var(--muted); }
+.c54-copy-symbol { display: inline-grid; place-items: center; width: 14px; height: 14px; }
+.c54-copy-symbol > .anticon { grid-area: 1 / 1; transition: opacity 300ms cubic-bezier(.2,0,0,1); }
+.c54-copy-check, .is-copied .c54-copy-original { opacity: 0; }
+.is-copied .c54-copy-check { opacity: 1; }
+@media (hover: hover) {
+  .ref54-app .c54-message-actions .ant-btn:not(:disabled):hover { color: var(--text); background: var(--nav-track); }
+  .ref54-app .c54-message-actions .ant-btn.is-copied:hover { color: var(--accent); }
+}
+@media (hover: none), (pointer: coarse) {
+  .ref54-app .c54-message { margin-block-end: 14px; }
+  .ref54-app .c54-message.is-actions-open { margin-block-end: 8px; }
+  .ref54-app .c54-message:has(+ .c54-message.is-continuation),
+  .ref54-app .c54-message.is-actions-open:has(+ .c54-message.is-continuation) { margin-block-end: 9px; }
+  .ref54-app .c54-message-actions { gap: 4px; }
+  .ref54-app .c54-message-actions .ant-btn { width: 36px; min-width: 36px; height: 36px; min-height: 36px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root:not([data-motion=reduced]) .ref54-app .c54-message {
+    transition: margin-block-end 180ms cubic-bezier(.2,0,0,1);
+  }
+  :root:not([data-motion=reduced]) .ref54-app .c54-message > .c54-actions-reveal {
+    transition: grid-template-rows 180ms cubic-bezier(.2,0,0,1), opacity 140ms ease;
+  }
+  :root:not([data-motion=reduced]) .c54-copy-symbol > .anticon { transition: opacity 300ms cubic-bezier(.2,0,0,1), scale 300ms cubic-bezier(.2,0,0,1), filter 300ms cubic-bezier(.2,0,0,1); }
+  :root:not([data-motion=reduced]) .c54-copy-check,
+  :root:not([data-motion=reduced]) .is-copied .c54-copy-original { scale: .25; filter: blur(4px); }
+  :root:not([data-motion=reduced]) .is-copied .c54-copy-check { scale: 1; filter: blur(0); }
+}
+@media (forced-colors: active) {
+  .ref54-app .c54-message-actions .ant-btn:focus-visible { outline-color: Highlight; }
+}

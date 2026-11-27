@@ -1,0 +1,11 @@
+/* The conversation has no second header; history and creation live in the global bar. */
+.l54-theme-sync *,.l54-theme-sync *::before,.l54-theme-sync *::after{transition:none!important}
+html,body{background:var(--canvas-color)}
+.ref54-app .l54-header-actions>.l54-history-global.ant-btn{border-radius:50%;padding:0;min-width:36px;width:36px}
+.ref54-chat-layout .c54-thread-inner{padding-top:28px}
+.s54-theme-options{grid-template-columns:repeat(4,minmax(0,1fr))}
+.s54-theme-tile.auto .s54-theme-preview{background:linear-gradient(120deg,#d5dfdf,#b5c7cf)}
+.s54-theme-tile.auto .s54-theme-preview i{background:#f5f8f8}
+.s54-theme-tile.auto .s54-theme-preview i:first-child{background:#617787}
+@media(max-width:1000px){.ref54-app .l54-search-label{display:none}}
+@media(max-width:700px){.ref54-app .l54-history-global{display:none!important}.s54-theme-options{grid-template-columns:repeat(2,minmax(0,1fr))}.ref54-chat-layout .c54-thread-inner{padding-top:20px}}
