@@ -13,7 +13,7 @@
 :root[data-message-style=classic]{
   /* both sides in bubbles; each block of a long reply becomes its own card */
   --msg-ai-pad:0;--msg-ai-maxw:620px;
-  --msg-chunk-bg:var(--bubble);--msg-chunk-ring:var(--line);--msg-chunk-pad:11px 16px;--msg-chunk-radius:18px;--msg-chunk-gap:4px;--msg-chunk-join:6px;--msg-segment-gap:4px;--msg-turn-gap:40px;
+  --msg-chunk-bg:var(--bubble);--msg-chunk-ring:var(--line);--msg-chunk-pad:11px 16px;--msg-chunk-radius:18px;--msg-chunk-gap:7px;--msg-chunk-join:6px;--msg-segment-gap:7px;--msg-turn-gap:40px;
   --msg-user-bg:var(--surface);--msg-user-radius:20px;--msg-gap:22px;--msg-line:1.7;
 }
 :root[data-message-style=plain]{
