@@ -23,6 +23,7 @@ import './adaptive-theme.css';
 import './adaptive-layout.css';
 import './theme-collection.css';
 import './composer-polish.css';
+import './layout-refresh.css';
 
 function useMedia(query){const [matches,setMatches]=useState(()=>matchMedia(query).matches);useEffect(()=>{const media=matchMedia(query),changed=()=>setMatches(media.matches);media.addEventListener('change',changed);return()=>media.removeEventListener('change',changed);},[query]);return matches;}
 const messageTime=()=>new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date());
