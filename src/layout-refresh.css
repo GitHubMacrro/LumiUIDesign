@@ -1,15 +1,7 @@
 /* Layout refresh for chat and projects. Scoped to .ref54-app; no component changes. */
 
 /* ---------- Chat ---------- */
-/* Assistant replies read as text on the canvas, not as bubbles; only the user's turns are bubbles. */
-.ref54-app .c54-message:not(.is-user)>.c54-message-surface{background:transparent;box-shadow:none;backdrop-filter:none;padding:2px 0;max-width:min(100%,660px);font-size:15px;line-height:1.8}
-.ref54-app .c54-message:not(.is-user):has(.c54-decision)>.c54-message-surface{padding:0}
-.ref54-app .c54-message.is-user>.c54-message-surface{background:var(--surface);box-shadow:0 0 0 1px var(--line);border-radius:20px 20px 6px 20px;padding:10px 16px;max-width:min(78%,540px)}
-.ref54-app .c54-message{margin-bottom:28px}
-.ref54-app .c54-message:not(.is-user)>.c54-message-actions,.ref54-app .c54-message:not(.is-user) .c54-actions-reveal{margin-left:-8px}
-.ref54-app .c54-thread-date{font-size:.6875rem;letter-spacing:.06em;color:var(--muted);opacity:.8}
-.ref54-app .c54-prose-list{padding-left:1.1em}
-.ref54-app .c54-prose-list li::marker{color:var(--accent)}
+/* Message surfaces are driven by message-style.css tokens. */
 /* Quoted reply: a thin accent rule instead of a second floating bubble. */
 .ref54-app .c54-quote-bubble{background:transparent;border-left:2px solid color-mix(in srgb,var(--accent) 60%,transparent);border-radius:0;padding:2px 0 2px 12px;color:var(--muted)}
 /* Work status in the thread: a small card, the only accent block in the column. */
@@ -59,7 +51,6 @@
 
 /* ---------- Mobile ---------- */
 @media(max-width:700px){
- .ref54-app .c54-message.is-user>.c54-message-surface{max-width:86%}
  .ref54-app .p54-sidebar{border-right:0;padding:8px 4px}
  .ref54-app .p54-layout .p54-overview-cards,.ref54-app .p54-layout .p54-work-list{grid-template-columns:minmax(0,1fr)}
  .ref54-app .p54-project-list>button{background:var(--surface-panel);box-shadow:0 0 0 1px var(--line);margin-bottom:10px}
